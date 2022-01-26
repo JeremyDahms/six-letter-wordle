@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="board">
     <div v-for="guess in guesses" :key="guess.guessId">
       <game-row
         :word="guess.guess"
@@ -12,10 +12,11 @@
 
 <script>
 import GameRow from "./GameRow.vue";
+import selectRandomWord from "./assets/words";
 export default {
   data() {
     return {
-      answer: "HEAVEN",
+      answer: selectRandomWord(),
       currentGuess: 0,
       guesses: [
         {
@@ -61,6 +62,7 @@ export default {
   },
   methods: {
     keyDown(e) {
+      console.log("guesses", this.guesses);
       if (e.key === "Enter") {
         if (this.guesses[this.currentGuess].guess.length < 6) return;
         this.submitGuess();
@@ -78,7 +80,9 @@ export default {
     },
     submitGuess() {
       this.guesses[this.currentGuess].submitted = true;
-      this.currentGuess += 1;
+      if (this.currentGuess < 6) {
+        this.currentGuess += 1;
+      }
     }
   },
   components: {
@@ -86,3 +90,10 @@ export default {
   }
 };
 </script>
+
+<style>
+.board {
+  display: flex;
+  flex-direction: column;
+}
+</style>

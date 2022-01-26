@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <game-header></game-header>
     <game-board></game-board>
   </div>
 </template>
@@ -8,9 +9,7 @@
 export default {
   name: "app",
   beforeCreate() {
-    document
-      .querySelector("body")
-      .setAttribute("style", "background:slategray");
+    document.querySelector("body").setAttribute("style", "background:#121213");
   },
   data() {
     return {};
@@ -20,13 +19,14 @@ export default {
 
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  color: white;
-  margin-top: 60px;
+  color: #d7dadc;
+  margin-top: 1vh;
 }
 </style>
