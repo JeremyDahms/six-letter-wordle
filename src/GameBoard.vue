@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     keyDown(e) {
-      console.log("guesses", this.guesses);
       if (e.key === "Enter") {
         if (this.guesses[this.currentGuess].guess.length < 6) return;
         this.submitGuess();

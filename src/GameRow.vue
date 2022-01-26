@@ -42,7 +42,6 @@ export default {
   },
   computed: {
     letters: function() {
-      console.log(this.answer);
       let letterArr = [];
       if (this.submitted) {
         for (let i = 0; i < 6; i++) {
@@ -57,7 +56,6 @@ export default {
             status: status
           });
         }
-        console.log(letterArr);
         return letterArr;
       }
       for (let i = 0; i < 6; i++) {
