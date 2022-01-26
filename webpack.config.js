@@ -73,7 +73,6 @@ module.exports = {
 
 if (process.env.NODE_ENV === "production") {
   module.exports.output = {
-    path: path.resolve(__dirname, "./dist"),
     publicPath: "/six-letter-wordle/",
     filename: "build.js"
   };
